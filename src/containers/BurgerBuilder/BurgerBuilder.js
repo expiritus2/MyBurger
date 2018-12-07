@@ -21,7 +21,6 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props);
         this.props.onInitIngredients();
     }
 
@@ -37,11 +36,11 @@ class BurgerBuilder extends Component {
     }
 
     purchaseHandler = () => {
-        if(this.props.isAuthenticated) {
+        if (this.props.isAuthenticated) {
             this.setState( { purchasing: true } );
         } else {
             this.props.onSetAuthRedirectPath('/checkout');
-            this.props.history.push('/');
+            this.props.history.push('/auth');
         }
     }
 
